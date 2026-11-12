@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Simulator — Chat</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">🏥 Patient Simulator</span>
+    <div class="nav-links">
+      <a href="/chat.html">Chat</a>
+      <a href="/logs.html" id="logs-link" class="hidden">Logs</a>
+      <a href="#" id="logout-link">Logout</a>
+    </div>
+  </nav>
+
+  <div class="chat-layout">
+    <!-- Sidebar: session list + new session -->
+    <div class="chat-sidebar">
+      <h2>Sessions</h2>
+      <button class="btn btn-secondary" style="width:100%;margin-bottom:1rem;font-size:0.85rem" id="new-session-btn">
+        + New Session
+      </button>
+      <div id="session-list"></div>
+    </div>
+
+    <!-- Main chat area -->
+    <div class="chat-main">
+      <div class="chat-header" id="chat-header">Select or create a session</div>
+      <div class="chat-messages" id="chat-messages">
+        <p class="text-dim text-center" style="margin:auto">
+          Choose a patient scenario to begin.
+        </p>
+      </div>
+      <div class="chat-input-area" id="chat-input-area" style="display:none">
+        <input type="text" id="chat-input" placeholder="Type your message..." />
+        <button class="btn" id="send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario picker modal -->
+  <div class="modal-overlay hidden" id="scenario-modal">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h2>Choose a Patient Scenario</h2>
+      <div class="scenario-grid" id="scenario-grid"></div>
+    </div>
+  </div>
+
+  <script src="/js/chat.js"></script>
+</body>
+</html>

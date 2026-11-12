@@ -1,0 +1,22 @@
+{
+  "name": "patient-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create patient-simulator-db",
+    "db:migrate": "wrangler d1 execute patient-simulator-db --file=./schema.sql",
+    "db:migrate:local": "wrangler d1 execute patient-simulator-db --local --file=./schema.sql",
+    "vectorize:create": "wrangler vectorize create patient-indexed-material --dimensions=768 --metric=cosine",
+    "typegen": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241011.0",
+    "typescript": "^5.6.0",
+    "wrangler": "^3.90.0"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "patient-simulator",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "patient-simulator-db",
+      "database_id": "YOUR_DATABASE_ID_HERE"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "patient-indexed-material",
+      "remote": true
+    }
+  ]
+  // ── Secrets (set via `npx wrangler secret put <NAME>`) ──
+  //   GEMINI_API_KEY  — Google Gemini API key from Google AI Studio
+  //   SESSION_SECRET  — random string for session token signing
+  //
+  // ── Optional vars (set via wrangler vars or dashboard) ──
+  //   GEMINI_MODEL    — model name (default: gemini-2.0-flash)
+}
